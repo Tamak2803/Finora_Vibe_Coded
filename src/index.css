@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-finora-navy: #142B45;
+  --color-finora-navy-hover: #0F2136;
+  --color-finora-emerald: #10B981;
+  --color-finora-emerald-dark: #047857;
+  --color-finora-mint: #D1FAE5;
+  --color-finora-bg: #F8FAFC;
+  --color-finora-ink: #1E293B;
+  --color-finora-muted: #64748B;
+  --color-finora-border: #E2E8F0;
+  --color-finora-amber: #F59E0B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-padding-top: 5.5rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Custom subtle range slider styling for the spending simulator */
+input[type="range"].finora-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: #E2E8F0;
+  outline: none;
+}
+
+input[type="range"].finora-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #142B45;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].finora-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background: #047857;
+}
+
+input[type="range"].finora-slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #10B981;
+  outline-offset: 2px;
+}
+
+input[type="range"].finora-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #142B45;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+  cursor: pointer;
+}

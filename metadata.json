@@ -1,0 +1,6 @@
+{
+  "name": "Finora",
+  "description": "Your Money. Your Clarity. Your Control. A personal finance companion for tracking expenses, managing budgets, and achieving savings goals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
